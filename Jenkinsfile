@@ -7,12 +7,12 @@ pipeline {
         BRANCH = 'master'
         GIT_HUB_REPO= 'https://github.com/Raghusadhu/spring_mvc.git'
     }    
-     parameters(
+    parameters{
         choice(
         choices: ['PROD', 'QA'], 
         name: 'Server Environment'
         )
-        )
+    }
       stages {
        stage('Add Config files') {
        steps {
