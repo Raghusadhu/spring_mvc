@@ -14,6 +14,13 @@ pipeline {
         )
         )
       stages {
+       stage('Add Config files') {
+       steps {
+            configFileProvider([configFile(fileId: 'MyCustom', targetLocation: '/tmp/')]) {
+            // some block
+            }
+          }
+ }
         stage('clone') {
             steps {
 /*           git url: 'https://github.com/Raghusadhu/spring_mvc.git' */
