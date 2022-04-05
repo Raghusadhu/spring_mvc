@@ -24,7 +24,7 @@ pipeline {
         stage('clone') {
             steps {
 /*           git url: 'https://github.com/Raghusadhu/spring_mvc.git' */
-                git url:'${GIT_HUB_REPO}'
+                git url:'${env.GIT_HUB_REPO}'
             }
         }
         stage('compile') {
