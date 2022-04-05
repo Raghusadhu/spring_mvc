@@ -16,7 +16,7 @@ pipeline {
       stages {
        stage('Add Config files') {
        steps {
-            configFileProvider([configFile(fileId: 'MyCustom', targetLocation: '/tmp/')]) {
+            configFileProvider([configFile(fileId: "5b93c6cd-e9b5-4313-93b7-1cab02d5b48c", targetLocation: '/tmp/')]) {
             // some block
             }
           }
