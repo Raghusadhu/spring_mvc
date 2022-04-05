@@ -3,13 +3,21 @@ pipeline {
     tools {
         maven 'maven' 
     }
-
-    
-    
-    stages {
+ environment {
+        BRANCH = 'master'
+        GIT_HUB_REPO= 'https://github.com/Raghusadhu/spring_mvc.git'
+    }    
+     parameters(
+        choice(
+        choices: ['PROD', 'QA'], 
+        name: 'Server Environment'
+        )
+        )
+      stages {
         stage('clone') {
             steps {
-                git url: 'https://github.com/Raghusadhu/spring_mvc.git'
+/*           git url: 'https://github.com/Raghusadhu/spring_mvc.git' */
+                git url:'${GIT_HUB_REPO}'
             }
         }
         stage('compile') {
